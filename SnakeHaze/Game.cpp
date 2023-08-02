@@ -26,7 +26,7 @@ void Game::start()
 	snake_box.setFillColor(sf::Color::Yellow);
 	snake_box.setOutlineColor(sf::Color::Blue);
 	snake_box.setOutlineThickness(2.f);
-	snake_box.setSize(sf::Vector2f(snake.getGlobalBounds().width, snake.getGlobalBounds().height));
+	snake_box.setSize(sf::Vector2f(snake.getGlobalBounds().width, snake.getGlobalBounds().height/2));
 	snake_box.setPosition(snake.getPosition());
 
 	while (window.isOpen())
@@ -53,8 +53,6 @@ void Game::start()
 		window.draw(snake);
 		window.draw(*apples_ptr);
 		snake_box.setPosition(snake.getPosition());
-		snake_box.setSize(sf::Vector2f(snake.getGlobalBounds().width, snake.getGlobalBounds().height));
-		//std::cout << snake.getGlobalBounds().width << snake.getGlobalBounds().height << std::endl;
 		window.display();
 	}
 };
