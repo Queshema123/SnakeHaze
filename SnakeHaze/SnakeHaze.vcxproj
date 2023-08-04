@@ -154,7 +154,7 @@
     <Image Include="Img\SnakeHeadRight.png" />
     <Image Include="Img\SnakeHeadUp.png" />
     <Image Include="Img\SnakeTailDown.png" />
-    <Image Include="Img\SnakeTailLLeft.png" />
+    <Image Include="Img\SnakeTailLeft.png" />
     <Image Include="Img\SnakeTailRight.png" />
     <Image Include="Img\SnakeTailUp.png" />
   </ItemGroup>

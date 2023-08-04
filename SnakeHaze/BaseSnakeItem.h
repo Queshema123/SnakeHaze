@@ -22,6 +22,7 @@ public:
 	BaseSnakeItem();
 	BaseSnakeItem(sf::Vector2f start_position, direction direction);
 	float getSpeed();
+	direction getDirection();
 	virtual void move() = 0;
 	virtual ~BaseSnakeItem() = default;
 };

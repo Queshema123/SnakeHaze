@@ -10,7 +10,7 @@ private:
 	bool isReachedPosition();
 	void loadTextures() override;
 public:
-	Tail(sf::Vector2f start_position, direction direction);
+	Tail(sf::Vector2f start_position, sf::Vector2f go_to_position, direction direction);
 	void move() override;
 	void update(sf::Vector2f position, direction direction);
 	~Tail() = default;

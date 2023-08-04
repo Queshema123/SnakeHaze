@@ -52,7 +52,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Img\SnakeHeadRight.png">
+    <Image Include="Img\CollectableItem.png">
       <Filter>Файлы ресурсов</Filter>
     </Image>
     <Image Include="Img\SnakeHeadDown.png">
@@ -61,22 +61,22 @@
     <Image Include="Img\SnakeHeadLeft.png">
       <Filter>Файлы ресурсов</Filter>
     </Image>
+    <Image Include="Img\SnakeHeadRight.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
     <Image Include="Img\SnakeHeadUp.png">
       <Filter>Файлы ресурсов</Filter>
     </Image>
     <Image Include="Img\SnakeTailDown.png">
       <Filter>Файлы ресурсов</Filter>
     </Image>
-    <Image Include="Img\SnakeTailLLeft.png">
+    <Image Include="Img\SnakeTailLeft.png">
       <Filter>Файлы ресурсов</Filter>
     </Image>
     <Image Include="Img\SnakeTailRight.png">
       <Filter>Файлы ресурсов</Filter>
     </Image>
     <Image Include="Img\SnakeTailUp.png">
-      <Filter>Файлы ресурсов</Filter>
-    </Image>
-    <Image Include="Img\CollectableItem.png">
       <Filter>Файлы ресурсов</Filter>
     </Image>
   </ItemGroup>

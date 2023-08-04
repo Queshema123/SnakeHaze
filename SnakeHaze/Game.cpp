@@ -16,19 +16,6 @@ void Game::start()
 	apples_ptr = std::unique_ptr<CollectableItem>( new CollectableItem(sf::Vector2f(width_dist(generator), height_dist(generator))) );
 	snake = Snake(sf::Vector2f(window_width / 2, window_height / 2), sf::Keyboard::Key::Right);
 
-	sf::RectangleShape apple_box;
-	apple_box.setOutlineColor(sf::Color::Blue);
-	apple_box.setOutlineThickness(2.f);
-	apple_box.setSize(sf::Vector2f(apples_ptr->getGlobalBounds().width, apples_ptr->getGlobalBounds().height));
-	apple_box.setPosition(apples_ptr->getPosition());
-
-	sf::RectangleShape snake_box;
-	snake_box.setFillColor(sf::Color::Yellow);
-	snake_box.setOutlineColor(sf::Color::Blue);
-	snake_box.setOutlineThickness(2.f);
-	snake_box.setSize(sf::Vector2f(snake.getGlobalBounds().width, snake.getGlobalBounds().height));
-	snake_box.setPosition(snake.getPosition());
-
 	while (window.isOpen())
 	{
 		sf::Event window_event;
@@ -45,14 +32,15 @@ void Game::start()
 			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 				snake.update(sf::Keyboard::Down);
 		}
-		collisionCheck();
+
 		window.clear();
+
 		snake.move();
-		window.draw(apple_box);
-		window.draw(snake_box);
-		window.draw(snake);
+		collisionCheck();
+
+		snake.draw(window);
 		window.draw(*apples_ptr);
-		snake_box.setPosition(snake.getPosition());
+
 		window.display();
 	}
 };
@@ -64,6 +52,7 @@ void Game::collisionCheck()
 	nextPos.top += snake.getSpeed();
 	if (apples_ptr->getGlobalBounds().intersects(nextPos))
 	{
+		snake.addTail();
 		apples_ptr.reset();
 		apples_ptr = std::unique_ptr<CollectableItem>(new CollectableItem(sf::Vector2f(width_dist(generator), height_dist(generator)))); // Создаем новый объект на случайных координатах
 	}
@@ -77,4 +66,19 @@ void Game::update()
 /*
 	apples_ptr.reset();
 	apples_ptr = std::unique_ptr<CollectableItem>(new CollectableItem(sf::Vector2f(width_dist(generator), height_dist(generator)))); // Создаем новый объект на случайных координатах
+*/
+
+/*
+sf::RectangleShape apple_box;
+	apple_box.setOutlineColor(sf::Color::Blue);
+	apple_box.setOutlineThickness(2.f);
+	apple_box.setSize(sf::Vector2f(apples_ptr->getGlobalBounds().width, apples_ptr->getGlobalBounds().height));
+	apple_box.setPosition(apples_ptr->getPosition());
+
+	sf::RectangleShape snake_box;
+	snake_box.setFillColor(sf::Color::Yellow);
+	snake_box.setOutlineColor(sf::Color::Blue);
+	snake_box.setOutlineThickness(2.f);
+	snake_box.setSize(sf::Vector2f(snake.getGlobalBounds().width, snake.getGlobalBounds().height));
+	snake_box.setPosition(snake.getPosition());
 */
