@@ -19,7 +19,7 @@ void Tail::loadTextures()
 bool Tail::isReachedPosition()
 { // ƒостиг ли хвост той позиции, где была повернута голова
 	sf::Vector2f go_to_position = next_direction_state.front().first;
-	return std::fabs(go_to_position.x - current_position.x) < 0.01 && std::fabs(go_to_position.y - current_position.y) < 0.01;
+	return std::fabs(go_to_position.x - current_position.x) < 0.3 && std::fabs(go_to_position.y - current_position.y) < 0.3	;
 }
 
 void Tail::update(sf::Vector2f position, direction direction)
@@ -29,7 +29,8 @@ void Tail::update(sf::Vector2f position, direction direction)
 
 void Tail::move()
 { 
-	switch (next_direction_state.front().second)
+	direction_state = next_direction_state.front().second;
+	switch (direction_state)
 	{
 	case direction::UP:
 		current_position.y -= speed;
@@ -44,12 +45,12 @@ void Tail::move()
 		current_position.x += speed;
 		break;
 	}
+	setPosition(current_position);
 	if (isReachedPosition()) //≈сли достигли нужной позиции 
 	{
 		updateTexture();
 		next_direction_state.pop();
 	}
-	setPosition(current_position);
 }
 
 /*

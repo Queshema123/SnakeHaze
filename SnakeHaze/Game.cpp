@@ -47,10 +47,10 @@ void Game::start()
 
 void Game::collisionCheck()
 {
-	sf::FloatRect nextPos = snake.getGlobalBounds();
+	/*sf::FloatRect nextPos = snake.getGlobalBounds();
 	nextPos.left += snake.getSpeed();
-	nextPos.top += snake.getSpeed();
-	if (apples_ptr->getGlobalBounds().intersects(nextPos))
+	nextPos.top += snake.getSpeed();*/
+	if (apples_ptr->getGlobalBounds().intersects(snake.getGlobalBounds()))
 	{
 		snake.addTail();
 		apples_ptr.reset();

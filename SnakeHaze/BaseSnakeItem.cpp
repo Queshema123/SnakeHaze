@@ -15,12 +15,12 @@ void BaseSnakeItem::updateTexture()
 	setTexture(textures[direction_state], true);
 }
 
-BaseSnakeItem::direction BaseSnakeItem::getDirection()
-{
-	return direction_state;
-}
-
 float BaseSnakeItem::getSpeed()
 {
 	return speed;
+}
+
+BaseSnakeItem::direction BaseSnakeItem::getDirection()
+{
+	return direction_state;
 }

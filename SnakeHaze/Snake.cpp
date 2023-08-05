@@ -78,21 +78,21 @@ void Snake::addTail()
 
 void Snake::tailMove()
 {
-	/*tail_objects[0]->update(getPosition(), direction_state);
+	tail_objects[0]->update(getPosition(), direction_state);
 	tail_objects[0]->move();
 	if (tail_objects.size() > 1)
 	{
 		for (size_t i = 1; i < tail_objects.size(); i++)
 		{
 			tail_objects[i]->update(tail_objects[i - 1]->getPosition(), tail_objects[i - 1]->getDirection());
-			tail_objects[i]->move();
+			tail_objects[i]->move();	
 		}
-	}*/
-	for (auto& tail : tail_objects)
-	{
-		//tail->update(getPosition(), direction_state);
-		tail->move();
 	}
+	/*for (auto& tail : tail_objects)
+	{
+		tail->move();
+		tail->update(getPosition(), direction_state);
+	}*/
 }
 
 void Snake::draw(sf::RenderWindow& window)
@@ -122,7 +122,7 @@ void Snake::move()
 		break;
 	}
 	setPosition(current_position);
-	if(tail_objects.size()>0) tailMove();
+	if (tail_objects.size()>0) tailMove();
 }
 
 void Snake::update(sf::Keyboard::Key key)
