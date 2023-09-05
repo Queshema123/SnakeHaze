@@ -1,14 +1,14 @@
-#pragma once
+#ifndef _SNAKE_H_
+#define _SNAKE_H_
+
 #include "BaseSnakeItem.h"
 #include "Tail.h"
 #include <SFML/Graphics/RenderWindow.hpp>
-#include <memory>
 #include <vector>
-
 
 class Snake :public BaseSnakeItem
 {
-	std::vector<std::unique_ptr<Tail>> tail_objects;
+	std::vector<Tail> tail_objects;
 
 	void loadTextures() override;
 	void tailMove();
@@ -19,7 +19,8 @@ public:
 	void move() override;
 	void update(sf::Keyboard::Key key);
 	void draw(sf::RenderWindow& window);
+	const std::vector<Tail>& getTails() { return tail_objects; }
 	Snake(sf::Vector2f start_position, sf::Keyboard::Key key);
 	Snake();
 };
-
+#endif _SNAKE_H_

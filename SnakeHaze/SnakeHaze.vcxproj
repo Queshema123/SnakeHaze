@@ -134,16 +134,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BaseSnakeItem.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="CollectableItem.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GlobalSettings.h" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Snake.cpp" />
     <ClCompile Include="Tail.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseSnakeItem.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="CollectableItem.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Snake.h" />
     <ClInclude Include="Tail.h" />
   </ItemGroup>

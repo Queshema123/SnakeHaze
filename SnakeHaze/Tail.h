@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _TAIL_H_
+#define _TAIL_H_
 #include "BaseSnakeItem.h"
 #include <queue>
 #include <utility>
@@ -15,4 +16,4 @@ public:
 	void update(sf::Vector2f position, direction direction);
 	~Tail() = default;
 };
-
+#endif _TAIL_H_

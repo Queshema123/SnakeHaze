@@ -46,14 +46,10 @@ void Tail::move()
 		break;
 	}
 	setPosition(current_position);
+	updateLocation();
 	if (isReachedPosition()) //Если достигли нужной позиции 
 	{
 		updateTexture();
 		next_direction_state.pop();
 	}
 }
-
-/*
-	float round_go_to_position_x = std::round(go_to_position.x * 100) / 100, round_go_to_position_y = std::round(go_to_position.y * 100) / 100;
-	float round_current_position_x = std::round(current_position.x * 100) / 100, round_current_position_y = std::round(current_position.y * 100) / 100;
-*/
